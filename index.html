@@ -3,41 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Niloofar Rahmati | Applied AI Researcher & Data Scientist</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <h1>My Personal Website</h1>
-            <ul>
-                <li><a href="#home">Home</a></li>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">NR</a>
+            <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </header>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-    <main>
-        <section id="home">
-            <h2>Welcome!</h2>
-            <p>This is my personal website. I'm glad you're here.</p>
-        </section>
+    <!-- Hero Section -->
+    <section id="about" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-name">Niloofar Rahmati</h1>
+            <p class="hero-headline">Applied AI Researcher & Data Scientist · Zürich, Switzerland</p>
+            <p class="hero-bio">
+                A background in Data Science and Mathematics, with hands-on expertise in AI research, 
+                RAG architectures, and ML engineering.
+            </p>
+            <div class="hero-actions">
+                <a href="#portfolio" class="btn btn-primary">View Projects</a>
+                <a href="#" class="btn btn-secondary">Download CV</a>
+            </div>
+        </div>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm a passionate developer who loves creating simple, elegant websites.</p>
-        </section>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="section-container">
+            <h2 class="section-title">Portfolio</h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <h3 class="project-title">Evidence-Based Political Reasoning Graph</h3>
+                    <p class="project-desc">
+                        Designed a multi-stage agentic pipeline to extract and construct verifiable 
+                        reasoning graphs from raw text, using a Postgres-to-Neo4j flow.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Agentic Workflows</span>
+                        <span class="tag">Neo4j</span>
+                        <span class="tag">LLMs</span>
+                    </div>
+                </article>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Feel free to reach out to me!</p>
-            <button id="contactBtn">Say Hello</button>
-        </section>
-    </main>
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <h3 class="project-title">Automated Market Narrative Analyzer</h3>
+                    <p class="project-desc">
+                        Deployed an automated, containerized pipeline to scrape and summarize 
+                        market-moving signals using prompt-first workflows.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">MLOps</span>
+                        <span class="tag">Deployment</span>
+                        <span class="tag">Docker</span>
+                    </div>
+                </article>
 
-    <footer>
-        <p>&copy; 2024 My Personal Website</p>
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <h3 class="project-title">LLM Self-Diagnosis & Hallucination Correction</h3>
+                    <p class="project-desc">
+                        Designed judgment and refinement pipelines achieving 95.6% hallucination 
+                        reduction via few-shot/CoT prompting.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Generative AI</span>
+                        <span class="tag">Evaluation</span>
+                        <span class="tag">Prompt Engineering</span>
+                    </div>
+                </article>
+
+                <!-- Project 4 -->
+                <article class="project-card">
+                    <h3 class="project-title">Policy-Compliance Evaluation Pipeline</h3>
+                    <p class="project-desc">
+                        Implemented advanced RAG workflows with iterative retrieval and LoRA 
+                        fine-tuning for model adaptation.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">RAG</span>
+                        <span class="tag">LoRA</span>
+                        <span class="tag">Fine-tuning</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="section-container">
+            <h2 class="section-title">Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">Jul 2024 – Dec 2024</span>
+                    <h3 class="timeline-title">Applied AI Researcher</h3>
+                    <p class="timeline-org">Universität Konstanz</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Dec 2021 – Sep 2022</span>
+                    <h3 class="timeline-title">Data Scientist</h3>
+                    <p class="timeline-org">Universität Konstanz</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Education</span>
+                    <h3 class="timeline-title">M.Sc. in Social and Economic Data Science</h3>
+                    <p class="timeline-org">Universität Konstanz</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">Education</span>
+                    <h3 class="timeline-title">M.Sc. in Mathematics</h3>
+                    <p class="timeline-org">Freie Universität Berlin</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2024 Niloofar Rahmati</p>
+            <div class="footer-links">
+                <a href="mailto:nil.rahmati@gmail.com" class="footer-link" aria-label="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                </a>
+                <a href="https://github.com/nilo0" class="footer-link" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/niloofar-rahmati-b7b8a4153" class="footer-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>

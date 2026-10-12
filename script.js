@@ -1,41 +1,71 @@
-// Simple JavaScript for the personal website
+// Portfolio Website JavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+    // Mobile Navigation Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
+            const href = this.getAttribute('href');
+            
+            // Skip if it's just a hash link
+            if (href === '#') {
+                e.preventDefault();
+                return;
+            }
+
+            const targetId = href.substring(1);
             const targetSection = document.getElementById(targetId);
+            
             if (targetSection) {
+                e.preventDefault();
                 targetSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Close mobile nav if open
+                if (navLinks && navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                }
             }
         });
     });
 
-    // Contact button interaction
-    const contactBtn = document.getElementById('contactBtn');
-    if (contactBtn) {
-        contactBtn.addEventListener('click', function() {
-            alert('Thanks for stopping by! Feel free to reach out anytime.');
-        });
-    }
+    // Close mobile nav when clicking outside
+    document.addEventListener('click', function(e) {
+        if (navLinks && navLinks.classList.contains('active')) {
+            if (!e.target.closest('.navbar')) {
+                navLinks.classList.remove('active');
+            }
+        }
+    });
 
-    // Add a simple greeting based on time of day
-    const homeSection = document.getElementById('home');
-    if (homeSection) {
-        const hour = new Date().getHours();
-        let greeting = 'Hello';
-        if (hour < 12) {
-            greeting = 'Good morning';
-        } else if (hour < 18) {
-            greeting = 'Good afternoon';
-        } else {
-            greeting = 'Good evening';
-        }
-        const welcomeText = homeSection.querySelector('p');
-        if (welcomeText) {
-            welcomeText.textContent = greeting + '! This is my personal website. I\'m glad you\'re here.';
-        }
-    }
+    // Add subtle fade-in animation on scroll
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe project cards and timeline items
+    document.querySelectorAll('.project-card, .timeline-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(el);
+    });
 });
